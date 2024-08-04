@@ -166,7 +166,7 @@ public partial class MainPage : FmgLibContentPage<MainPageViewModel>
 
     async void MauiRobotTapGestureRecognizer_Tapped(System.Object sender, System.EventArgs e)
     {
-        await Speak("Hey I am MauiRobot!");
+        await Speak("Hey I am MauiMarkup Robot!");
     }
 
     private async Task Speak(string phrase)

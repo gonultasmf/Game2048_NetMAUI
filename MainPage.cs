@@ -11,11 +11,11 @@ public partial class MainPage : FmgLibContentPage<MainPageViewModel>
                 .FontAttributes(Bold));
 
     Style<Grid> NumberTileGrid = new Style<Grid>(e => e
-                .SizeRequest(75,75));
+                .SizeRequest(90,90));
 
     Style<Frame> NumberTileFrame = new Style<Frame>(e => e
                 .CornerRadius(5)
-                .SizeRequest(70,70));
+                .SizeRequest(85,85));
 
     EnumToBoolConverter IsGameOverConverter = new(); 
     //=> 
@@ -37,6 +37,7 @@ public partial class MainPage : FmgLibContentPage<MainPageViewModel>
             .IgnoreSafeArea(false)
             .Margin(e => e.OnAndroid(new Thickness(0,30,0,0)).OniOS(0))
             .RowDefinitions(e => e.Auto().Star().Auto().Auto())
+            .RowSpacing(3)
             .Children(
                 new Grid()
                 .RowDefinitions(e => e.Auto().Auto().Auto())
@@ -100,6 +101,7 @@ public partial class MainPage : FmgLibContentPage<MainPageViewModel>
                     new Label()
                     .Row(2)
                     .ColumnSpan(3)
+                    .Margin(5)
                     .FontSize(15)
                     .TextCenterHorizontal()
                     .TextColor(Gray)
@@ -109,11 +111,11 @@ public partial class MainPage : FmgLibContentPage<MainPageViewModel>
                 new Border()
                 .Row(1)
                 .AlignStart()
-                .SizeRequest(340,336)
+                .SizeRequest(400,400)
                 .StrokeShape(new RoundRectangle().CornerRadius(5))
                 .Content(
                     new CollectionView()
-                    .SizeRequest(340,336)
+                    .SizeRequest(400,400)
                     .BackgroundColor(Color.FromArgb("#a49381"))
                     .CenterVertical()
                     .ItemsSource(e => e.Path("Tiles"))
@@ -176,7 +178,7 @@ public partial class MainPage : FmgLibContentPage<MainPageViewModel>
                 .Row(3)
                 .AlignBottom()
                 .ColumnDefinitions(e => e.Auto().Auto().Auto())
-                .Margin(0,0,0,70)
+                .Margin(0,0,0,40)
                 .Children(
                     new SKLottieView()
                     .SizeRequest(150)
@@ -326,7 +328,7 @@ public partial class MainPage : FmgLibContentPage<MainPageViewModel>
                 .Row(1)
                 .RowSpan(2)
                 .AlignTopCenterH()
-                .SizeRequest(340,336)
+                .SizeRequest(400,400)
                 .BackgroundColor(Color.FromArgb("#AA000000"))
                 .CornerRadius(10)
                 .HasShadow(false)
