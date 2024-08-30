@@ -29,7 +29,7 @@ public partial class MainPage : FmgLibContentPage<MainPageViewModel>
         IsGameOverConverter.TrueValues.Add(LevelState.GameOver);
         this
         .BackgroundColor(WhiteSmoke)
-        .HasNavigationBar(true)
+        .NavigationPageHasNavigationBar(true)
         .Padding(0)
         .Content(
             new Grid()
@@ -110,7 +110,7 @@ public partial class MainPage : FmgLibContentPage<MainPageViewModel>
 
                 new Border()
                 .Row(1)
-                .AlignStart()
+                .AlignTopLeft()
                 .SizeRequest(400,400)
                 .StrokeShape(new RoundRectangle().CornerRadius(5))
                 .Content(
@@ -167,8 +167,8 @@ public partial class MainPage : FmgLibContentPage<MainPageViewModel>
                     ),
 
                     new Label()
-                    .AlignEnd()
-                    .TextEnd()
+                    .AlignBottomRight()
+                    .TextBottomRight()
                     .FontSize(16)
                     .TextColor(Gray)
                     .Text(e => e.Path("FormattedTime"))
@@ -182,7 +182,7 @@ public partial class MainPage : FmgLibContentPage<MainPageViewModel>
                 .Children(
                     new SKLottieView()
                     .SizeRequest(150)
-                    .AlignBottomStart()
+                    .AlignBottomLeft()
                     .RepeatCount(-1)
                     .SemanticDescription("Cute dot net bot waving hi to you!")
                     .Source(new SKFileLottieImageSource().File("dotnetbot.json"))
@@ -197,20 +197,20 @@ public partial class MainPage : FmgLibContentPage<MainPageViewModel>
                     .Assign(out phraseLayout)
                     .Children(
                         new Border()
-                        .AlignTopFillH()
+                        .AlignTopFill()
                         .SizeRequest(8)
                         .BackgroundColor(Color.FromArgb("#aca6f7"))
                         .StrokeShape(new RoundRectangle().CornerRadius(10)),
 
                         new Border()
-                        .AlignTopFillH()
+                        .AlignTopFill()
                         .SizeRequest(12)
                         .Margin(0,10,0,0)
                         .BackgroundColor(Color.FromArgb("#aca6f7"))
                         .StrokeShape(new RoundRectangle().CornerRadius(10)),
 
                         new Border()
-                        .AlignTopFillH()
+                        .AlignTopFill()
                         .Margin(0,20,0,0)
                         .Padding(10)
                         .BackgroundColor(Color.FromArgb("#aca6f7"))
@@ -327,7 +327,7 @@ public partial class MainPage : FmgLibContentPage<MainPageViewModel>
                 new Frame()
                 .Row(1)
                 .RowSpan(2)
-                .AlignTopCenterH()
+                .AlignTopCenter()
                 .SizeRequest(400,400)
                 .BackgroundColor(Color.FromArgb("#AA000000"))
                 .CornerRadius(10)
